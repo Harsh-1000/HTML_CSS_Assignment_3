@@ -1,0 +1,237 @@
+:root{ 
+    --dark-clr:wheat;
+    --light-clr : #000000;
+    --h12-clr : gold;
+    --extra-link-hover-clr : whitesmoke;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+p{font-size: 18px;}
+
+.light-mode{
+    --dark-clr : #000000;
+    --light-clr : wheat;
+    --h12-clr:#000000;
+    --extra-link-hover-clr: aqua; 
+}
+
+body{
+    background-color: var(--light-clr);
+    color: var(--dark-clr);
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px;
+    color: #F5F5F5;
+}
+
+.logo,.light-dark-mode{width: 50px;}
+
+ul{font-size: 18px;}
+
+nav ul {
+    text-decoration: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul a{
+    text-decoration: none;
+    color: white;
+    height: 100%;
+}
+
+nav ul a :hover{color: yellow;}
+
+#theme-changed{cursor: pointer;}
+
+h1,h2{color: var(--h12-clr);}
+
+
+/* Main Section */
+main{
+    margin: 25px auto;
+    max-width: 95%;
+}
+
+.main-title{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.sub-title{
+    font-size: 20px;
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+
+/* Intro Section */
+
+.intro, .know-more, .additional-detail{
+    display: flex;
+    gap: 24px;
+}
+
+.intro-content-img, .know-more-video, 
+.additional-detail-map{
+    flex-basis: 40%;
+}
+
+.intro-content-info, .know-more-info,
+.additional-detail-info{
+    flex-basis: 60%;
+    height: fit-content;
+}
+
+.intro-content-info p,.know-more-info p,
+.additional-detail-info p{
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.intro-content-img img, .know-more-video iframe,
+.additional-detail-map iframe{
+    width: 100%;
+    height: 95%;
+}
+
+/*Achievement Section */
+.achievement{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    row-gap: 40px;
+    margin-bottom: 60px;
+}
+
+.space-achievement img{
+    width: 100%;
+    height: 100%;
+    flex-basis: 60%;
+}
+
+.space-achievement-info{
+    text-align: center;
+    padding: 20px;
+    flex-basis: 40%;
+}
+
+.space-achievement{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid aqua;
+}
+
+.space-achievement{box-shadow: 0 0 10px 4px aqua;}
+
+.space-achievement img:hover{box-shadow: 0 0 30px 4px red;}
+
+.space-achievement-info p:hover{color: red;}
+
+/* know more */
+aside {
+    width: 36%;
+    margin-left: 15px;
+    padding: 8px;
+    float: right;
+    font-style: italic;
+    font-size: 16px;
+    background-color: lightgray;
+    color: black;
+  }
+
+/* additional detail */
+.additional-detail-img{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.additional-detail-img img
+{
+    width: 50%;
+}
+
+/* Extra Content */
+.extra-content{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4,1fr);
+    padding: 20px;
+}
+
+.extra-content-link{
+    display: grid;
+    place-items: center;
+    margin: 24px;
+}
+
+.extra-content-link img{
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.extra-content-link img:hover{
+    box-shadow: 0 0 50px 8px var(--extra-link-hover-clr);
+    transform: scale(1.05);
+}
+
+/* Footer section */
+
+footer{
+    background-color: #000000;
+    color: #F5F5F5;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+}
+
+/* Media Query */
+
+@media (max-width: 1200px) 
+{
+   main{ padding: 20px;}
+
+   .intro,.know-more,.additional-detail { display: block; }
+
+    .intro-content-info,.know-more-info,.additional-detail-info { margin-top: 20px;}
+
+    /* to handle achievement section */
+    .achievement { display: block; }
+
+    .space-achievement { margin: 20px; }
+
+    .hide-achievement, .hide-extra-content { display: none; }
+
+    /* To handle extra content */
+
+    .extra-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:700px)
+{
+    header ul li { padding: 2px;}
+    header ul {display: block;}
+}
